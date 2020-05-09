@@ -11,7 +11,7 @@ const hbs=require('hbs');
 const user=new User();
 const Handlebars = require("handlebars");
 
-
+const port=process.env.PORT||3000;
 app.use(express.urlencoded({extended:false}));
 
 
@@ -216,9 +216,9 @@ res.send(err.message);
 });*/
 
 // setting up the server
-app.listen(3000,()=>
+app.listen(port,()=>
 {
-    console.log('server is running on port 3000');
+    console.log('server is running on port '+port);
 });
 
 module.exports=app;
