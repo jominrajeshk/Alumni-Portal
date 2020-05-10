@@ -120,7 +120,7 @@ User.prototype={
          {
            bind.push(body[prop]);
          } 
-         let sql ='INSERT INTO updater (username,firstname,lastname,position,company,location,email,pastjob,pastlocation,pastcompany,university,areacode,phone,file,fi) VALUES (?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)';
+         let sql ='INSERT INTO updater (username,firstname,lastname,position,company,location,email,pastjob,pastlocation,pastcompany,university,areacode,phone,file,fi) VALUES (?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)';
            
          pool.query(sql,binds,function(err,result)
        {
@@ -134,7 +134,7 @@ User.prototype={
             bind[i]=bind[i+1];
         }
         bind[i]=buffer;
-        let sqll =' UPDATE updater SET firstname=?,lastname=?,position=?,company=?,location=?,email=?,pastjob=?,pastlocation=?,pastcompany=?,university=?,areacode=?,phone=?,file=?WHERE username=?';
+        let sqll =' UPDATE updater SET firstname=?,lastname=?,position=?,company=?,location=?,email=?,pastjob=?,pastlocation=?,pastcompany=?,university=?,areacode=?,phone=?,file=?,fi=? WHERE username=?';
 
         pool.query(sqll,bind,function(err,result)
         {
