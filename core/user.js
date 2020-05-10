@@ -42,7 +42,7 @@ User.prototype={
         } 
         //bind=Object.values(body);
      
-        let sql ='INSERT INTO users  (username,fullname,password) VALUES (?,?,?)';
+        let sql ='INSERT INTO heroku_d46b8aae512cbfb.users  (username,fullname,password) VALUES (?,?,?)';
 
         pool.query(sql,bind,function(err,result)
        {
@@ -85,7 +85,7 @@ User.prototype={
          {
            bind.push(body[prop]);
          } 
-         let sql ='INSERT INTO events (username,position,location,description,email,date,file,fi) VALUES (?,?,?,?,?,?,?,?)';
+         let sql ='INSERT INTO heroku_d46b8aae512cbfb.events (username,position,location,description,email,date,file,fi) VALUES (?,?,?,?,?,?,?,?)';
            
          pool.query(sql,bind,function(err,result)
        {
@@ -103,7 +103,7 @@ User.prototype={
          {
            bind.push(body[prop]);
          } 
-         let sql ='INSERT INTO eventss (username,eventname,location,description,contact,date,time,file,fi) VALUES (?,?,?,?,?,?,?,?,?)';
+         let sql ='INSERT INTO heroku_d46b8aae512cbfb.eventss (username,eventname,location,description,contact,date,time,file,fi) VALUES (?,?,?,?,?,?,?,?,?)';
            
          pool.query(sql,bind,function(err,result)
        {
@@ -120,7 +120,7 @@ User.prototype={
          {
            bind.push(body[prop]);
          } 
-         let sql ='INSERT INTO updaterr (username,firstname,lastname,position,company,location,email,pastjob,pastlocation,pastcompany,university,areacode,phone,file,fi) VALUES (?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)';
+         let sql ='INSERT INTO heroku_d46b8aae512cbfb.updaterr (username,firstname,lastname,position,company,location,email,pastjob,pastlocation,pastcompany,university,areacode,phone,file,fi) VALUES (?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)';
            
          pool.query(sql,binds,function(err,result)
        {
@@ -134,7 +134,7 @@ User.prototype={
             bind[i]=bind[i+1];
         }
         bind[i]=buffer;
-        let sqll =' UPDATE updaterr  SET firstname=?,lastname=?,position=?,company=?,location=?,email=?,pastjob=?,pastlocation=?,pastcompany=?,university=?,areacode=?,phone=?,file=?,fi=? WHERE username=?';
+        let sqll =' UPDATE heroku_d46b8aae512cbfb.updaterr  SET firstname=?,lastname=?,position=?,company=?,location=?,email=?,pastjob=?,pastlocation=?,pastcompany=?,university=?,areacode=?,phone=?,file=?,fi=? WHERE username=?';
 
         pool.query(sqll,bind,function(err,result)
         {
@@ -151,7 +151,7 @@ User.prototype={
 }
 alljobs=function(callback)
 {
-    let sql='SELECT * FROM events';
+    let sql='SELECT * FROM heroku_d46b8aae512cbfb.events';
     pool.query(sql,function(err,result)
     {
      if (err) console.log(err);
@@ -160,7 +160,7 @@ alljobs=function(callback)
 }
 allevents=function(callback)
 {
-    let sql='SELECT * FROM eventss';
+    let sql='SELECT * FROM heroku_d46b8aae512cbfb.eventss';
     pool.query(sql,function(err,result)
     {
      if (err) console.log(err);
@@ -169,7 +169,7 @@ allevents=function(callback)
 }
 profile=function(name,callback)
 {
-    let sql='SELECT * FROM updaterr WHERE username=?';
+    let sql='SELECT * FROM heroku_d46b8aae512cbfb.updaterr WHERE username=?';
     pool.query(sql,name,function(err,result)
     {
      if (err) console.log(err);
