@@ -271,10 +271,23 @@ router.get('/allevents',(req,res,next)=>{
 });
 
 router.get('/profile',(req,res,next)=>{
+    var info=[];
+    profile(req.session.user.username,function(result)
+    {
+        console.log(result);
+        
+        
+          info.push(result[0]);
+
+        
+        
+    });
+    
+
     let user=req.session.user;
     if(user)
     {
-       res.render('profile',{app:req.session.app,name:user.fullname});
+       res.render('profile',{app:req.session.app,name:user.fullname,info});
        
         return;
     }

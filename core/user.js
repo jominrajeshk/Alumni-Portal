@@ -160,7 +160,7 @@ alljobs=function(callback)
 }
 allevents=function(callback)
 {
-    let sql='SELECT * FROM events';
+    let sql='SELECT * FROM eventss';
     pool.query(sql,function(err,result)
     {
      if (err) console.log(err);
