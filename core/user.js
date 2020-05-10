@@ -85,7 +85,7 @@ User.prototype={
          {
            bind.push(body[prop]);
          } 
-         let sql ='INSERT INTO events (username,position,location,description,email,date,file,fi) VALUES (?,?,?,?,?,?,?,?)';
+         let sql ='INSERT INTO eevents (username,position,location,description,email,date,file,fi) VALUES (?,?,?,?,?,?,?,?)';
            
          pool.query(sql,bind,function(err,result)
        {
@@ -151,7 +151,7 @@ User.prototype={
 }
 alljobs=function(callback)
 {
-    let sql='SELECT * FROM heroku_d46b8aae512cbfb.events';
+    let sql='SELECT * FROM eevents';
     pool.query(sql,function(err,result)
     {
      if (err) console.log(err);
@@ -160,7 +160,7 @@ alljobs=function(callback)
 }
 allevents=function(callback)
 {
-    let sql='SELECT * FROM heroku_d46b8aae512cbfb.eventss';
+    let sql='SELECT * FROM eventss';
     pool.query(sql,function(err,result)
     {
      if (err) console.log(err);
