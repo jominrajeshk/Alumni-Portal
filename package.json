@@ -26,5 +26,8 @@
     "sails": "^1.2.4",
     "sails.io.js-dist": "^1.2.1",
     "util.promisify": "^1.0.1"
+  },
+  "engines": {
+    "node": "12.4.0"
   }
 }
