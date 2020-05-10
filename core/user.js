@@ -8,7 +8,7 @@ function User()
 User.prototype={
     //find user data by id or username
     find: function(user=null,callback)
-    {
+    {   console.log('hello');
         var field;
         if(user)
         {
