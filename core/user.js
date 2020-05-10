@@ -151,7 +151,7 @@ User.prototype={
 }
 alljobs=function(callback)
 {
-    let sql='SELECT * FROM events';
+    let sql='SELECT * FROM heroku_d46b8aae512cbfb.events';
     pool.query(sql,function(err,result)
     {
      if (err) console.log(err);
@@ -160,7 +160,7 @@ alljobs=function(callback)
 }
 allevents=function(callback)
 {
-    let sql='SELECT * FROM eventss';
+    let sql='SELECT * FROM heroku_d46b8aae512cbfb.eventss';
     pool.query(sql,function(err,result)
     {
      if (err) console.log(err);
