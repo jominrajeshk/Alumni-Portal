@@ -120,7 +120,7 @@ User.prototype={
          {
            bind.push(body[prop]);
          } 
-         let sql ='INSERT INTO updater (username,firstname,lastname,position,company,location,email,pastjob,pastlocation,pastcompany,university,areacode,phone,file,fi) VALUES (?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)';
+         let sql ='INSERT INTO updaterr (username,firstname,lastname,position,company,location,email,pastjob,pastlocation,pastcompany,university,areacode,phone,file,fi) VALUES (?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)';
            
          pool.query(sql,binds,function(err,result)
        {
@@ -134,7 +134,7 @@ User.prototype={
             bind[i]=bind[i+1];
         }
         bind[i]=buffer;
-        let sqll =' UPDATE updater SET firstname=?,lastname=?,position=?,company=?,location=?,email=?,pastjob=?,pastlocation=?,pastcompany=?,university=?,areacode=?,phone=?,file=?,fi=? WHERE username=?';
+        let sqll =' UPDATE updaterr  SET firstname=?,lastname=?,position=?,company=?,location=?,email=?,pastjob=?,pastlocation=?,pastcompany=?,university=?,areacode=?,phone=?,file=?,fi=? WHERE username=?';
 
         pool.query(sqll,bind,function(err,result)
         {
@@ -169,7 +169,7 @@ allevents=function(callback)
 }
 profile=function(name,callback)
 {
-    let sql='SELECT * FROM updater WHERE username=?';
+    let sql='SELECT * FROM updaterr WHERE username=?';
     pool.query(sql,name,function(err,result)
     {
      if (err) console.log(err);
