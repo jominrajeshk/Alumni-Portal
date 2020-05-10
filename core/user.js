@@ -44,11 +44,25 @@ User.prototype={
      
         let sql ='INSERT INTO users  (username,fullname,password) VALUES (?,?,?)';
 
+        var binds=[];
+        binds.push(body.username);
+        let sqll ='INSERT INTO updaterr (username,firstname,lastname,position,company,location,email,pastjob,pastlocation,pastcompany,university,areacode,phone,file,fi) VALUES (?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)';
+           
+         pool.query(sqll,binds,function(err,result)
+       {
+        if (err) console.log(err);
+        
+        });
+
         pool.query(sql,bind,function(err,result)
        {
         if (err) console.log(err);
         callback(result.insertId);
         });
+
+
+
+
 
         
 
@@ -113,20 +127,20 @@ User.prototype={
 
     },
     addinfo:function(body,callback)
-    {   var binds=[];
-        binds.push(body.username);
+    {   /*var binds=[];
+        binds.push(body.username);*/
         var bind=[];
         for (prop in body)
          {
            bind.push(body[prop]);
          } 
-         let sql ='INSERT INTO updaterr (username,firstname,lastname,position,company,location,email,pastjob,pastlocation,pastcompany,university,areacode,phone,file,fi) VALUES (?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)';
+        /* let sql ='INSERT INTO updaterr (username,firstname,lastname,position,company,location,email,pastjob,pastlocation,pastcompany,university,areacode,phone,file,fi) VALUES (?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)';
            
          pool.query(sql,binds,function(err,result)
        {
         if (err) console.log(err);
         
-        });
+        });*/
         var i=0;
         var buffer=bind[0];
         for(i=0;i<bind.length-1;i++)
