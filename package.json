@@ -22,7 +22,7 @@
     "mysql": "^2.18.1",
     "nodemon": "^2.0.3",
     "path": "^0.12.7",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "sails": "^1.2.4",
     "sails.io.js-dist": "^1.2.1",
     "util.promisify": "^1.0.1"
